@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos Serviços</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .service-box {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-header {
+            padding: 1.5rem;
+            border-radius: 8px 8px 0 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .service-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .we-do {
+            background-color: #27ae60;
+        }
+        
+        .we-dont {
+            background-color: #e74c3c;
+        }
+        
+        .service-list {
+            padding: 1.5rem;
+            list-style-position: inside;
+        }
+        
+        .service-list li {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .service-list li:before {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .we-do-list li:before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z' fill='%2327ae60'/%3E%3C/svg%3E");
+        }
+        
+        .we-dont-list li:before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z' fill='%23e74c3c'/%3E%3C/svg%3E");
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background-color: #2c3e50;
+            color: white;
+        }
+        
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        
+        #search {
+            padding: 0.8rem 1rem;
+            width: 100%;
+            max-width: 500px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .services-container {
+                flex-direction: column;
+            }
+            
+            .service-box {
+                min-width: 100%;
+            }
+        }
+        
+        .highlight {
+            background-color: #ffffcc;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nossos Serviços</h1>
+        <p>Confira abaixo os serviços que oferecemos e os que não realizamos</p>
+    </header>
+    
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Buscar serviço..." autocomplete="off">
+        </div>
+        
+        <div class="services-container">
+            <div class="service-box">
+                <div class="service-header we-do">
+                    <h2>Serviços que Realizamos</h2>
+                    <p>Estamos prontos para atender suas necessidades</p>
+                </div>
+                <ul class="service-list we-do-list" id="we-do-list">
+                    <li>Impressões Papel Sulfite</li>
+                    <li>Impressões Papel Vergê (mais grosso que sulfite)</li>
+                    <li>Impressão Papel Fotográfico</li>
+                    <li>Impressão Papel Fotográfico Adesivo</li>
+                    <li>Impressão de Boletos</li>
+                    <li>Impressão de Documentos</li>
+                    <li>Fotos 3x4</li>
+                    <li>Plastificações de documentos</li>
+                    <li>Encadernações de documentos</li>
+                    <li>Revelação de fotos 10x15 (tamanho padrão)</li>
+                    <li>Currículo (presencial ou via site) </li>
+                    <li>Juntar arquivos (somente via site) </li>
+                    <li>Consultar Resultado de exames e impressão</li>
+                    <li>Contratos (somente via site) </li>
+                </ul>
+            </div>
+            
+            <div class="service-box">
+                <div class="service-header we-dont">
+                    <h2>Serviços que Não Realizamos</h2>
+                    <p>Infelizmente não podemos atender estes serviços</p>
+                </div>
+                <ul class="service-list we-dont-list" id="we-dont-list">
+                    <li>Gravação CD/DVD</li>
+                    <li>Trabalhos escolares</li>
+                    <li>Designer</li>
+                    <li>Concerto de Celular</li>
+                    <li>Concerto de Computador/Notebook</li>
+                    <li>Transferência de dados para pendrive</li>
+                    <li>Baixar arquivos</li>
+                    <li>Serviços Gov.br</li>
+                    <li>Serviços Detran</li>
+                    <li>Compras Online</li>
+                    <li>Trabalhos Universitários</li>
+                    <li>Atualização TV Box</li>
+                    <li>Agendamentos em Geral</li>
+                    <li>Serviços To Legal</li>
+                    <li>Recuperação de email</li>
+                    <li>Ligações para operadoras</li>
+                    <li>Colocação de películas celulares</li>
+                    <li>Abertura de aposentadoria</li>
+                    <li>Abertura de conta bancária</li>
+                    <li>Empréstimo de dinheiro</li>
+                    <li>Contratos/Declarações de qualquer tipo</li>
+                    <li>Recebimento de contas</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <p>&copy; 2025 - Todos os direitos reservados</p>
+    </footer>
+    
+    <script>
+        const searchInput = document.getElementById('search');
+        const weDoList = document.getElementById('we-do-list').getElementsByTagName('li');
+        const weDontList = document.getElementById('we-dont-list').getElementsByTagName('li');
+        
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            filterList(weDoList, searchTerm);
+            filterList(weDontList, searchTerm);
+        });
+        
+        function filterList(list, searchTerm) {
+            for (let i = 0; i < list.length; i++) {
+                const item = list[i];
+                const text = item.textContent.toLowerCase();
+                
+                if (text.includes(searchTerm)) {
+                    item.style.display = '';
+                    
+                    if (searchTerm.length > 0) {
+                        const regex = new RegExp(`(${searchTerm})`, 'gi');
+                        item.innerHTML = item.textContent.replace(regex, '<span class="highlight">$1</span>');
+                    } else {
+                        item.innerHTML = item.textContent;
+                    }
+                } else {
+                    item.style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
